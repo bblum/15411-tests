@@ -1,0 +1,17 @@
+#test exception 11
+
+bool ping(bool x);
+bool pong(bool x);
+
+bool ping(bool x) {
+  return !pong(!x);
+}
+
+bool pong(bool x) {
+  return !ping(!x);
+}
+
+int main() {
+  if (ping(true)) return 0;
+  else return 1;
+}

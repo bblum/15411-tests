@@ -1,0 +1,36 @@
+#test exception 11
+
+// Infinite recursion exhausts stack space
+
+int to(int x);
+int infinity(int x);
+int and(int x);
+int beyond(int x, int y);
+
+int to(int x) {
+  int y = x + 3;
+  int z = y + 1;
+  return infinity(z) + 1;
+}
+
+int infinity(int x) {
+  int a = x + 9;
+  int b = a * x;
+  return and(b + 3) + 2;
+}
+
+int and(int x) {
+  int a = x * 3;
+  int b = 9 * a;
+  return beyond(b, a) + 9;
+}
+
+int beyond(int x, int y) {
+  int a = x + y;
+  int b = a * x;
+  return to(a * b) + 3;
+}
+
+int main() {
+  return to(4);
+}

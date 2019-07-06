@@ -1,0 +1,11 @@
+#test exception
+
+int main_help()
+{
+    return main();
+}
+int main()
+{
+    return main_help();
+}
+

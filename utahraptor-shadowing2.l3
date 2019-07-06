@@ -1,0 +1,19 @@
+#test return 0
+
+int id(int id);
+
+int id(int x)
+{
+	return x;
+}
+
+int mul(int x, int y)
+{
+	int id = id(x) * id(y);
+	return id;
+}
+
+int main()
+{
+	return mul(0, 1);
+}
